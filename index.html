@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#11162b" />
+  <title>Prism Pop — Match 3</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand" aria-label="Prism Pop"><span class="brand-gem">✦</span><span>PRISM<br>POP</span></div>
+      <div class="stat-card"><span class="stat-label">SCORE</span><strong id="score">0</strong></div>
+      <div class="stat-card"><span class="stat-label">LEVEL</span><strong id="level">1</strong></div>
+      <div class="stat-card"><span class="stat-label">MOVES</span><strong id="moves">20</strong></div>
+    </header>
+
+    <section class="objective" aria-live="polite">
+      <div><span class="eyebrow">LEVEL <span id="objective-level">1</span></span><strong>Reach <span id="target">750</span> points</strong></div>
+      <div class="progress-track" aria-label="Level progress"><div id="progress" class="progress-fill"></div></div>
+    </section>
+
+    <section class="play-area">
+      <div id="combo" class="combo" aria-live="polite"></div>
+      <div id="board" class="board" role="grid" aria-label="Match three game board"></div>
+    </section>
+
+    <footer class="footer">
+      <p id="hint">Swap neighboring gems to make a match!</p>
+      <button id="restart" class="restart" type="button" aria-label="Restart game"><span>↻</span> NEW GAME</button>
+    </footer>
+  </main>
+
+  <div id="overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="overlay-title">
+    <div class="modal">
+      <div class="modal-sparkles">✦ ✧ ✦</div>
+      <h1 id="overlay-title">Level Complete!</h1>
+      <p id="overlay-text">A dazzling display!</p>
+      <div class="final-score"><span>SCORE</span><strong id="final-score">0</strong></div>
+      <button id="overlay-button" class="primary-button" type="button">NEXT LEVEL</button>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
